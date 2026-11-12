@@ -62,3 +62,47 @@ div img {
     border: 1px solid orange;
     color: orangered;
 }
+
+.main-div{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.left-div{
+    height: 500px;
+    width: 270px;
+    background: white;
+    border-radius: 20px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+}
+.right-div{
+    height: 500px;
+    width: 770px;
+    background-color: rgb(249, 249, 239);
+    margin-top: 60px;
+
+}
+.rating-radio{
+    display: flex;
+     flex-direction: row;
+    gap: 20px;
+}
+
+
+.right-input{
+    margin-top: -480px;
+    padding-top: 20px;
+}
+.right-address{
+    border-radius: 20px;
+    padding-left: 40px;
+    border:1px solid white;
+    height: 30px;
+    width: 550px;
+    outline: none   ;
+
+}
