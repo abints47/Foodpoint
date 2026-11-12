@@ -1,68 +1,393 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>FoodPoint - Order food from your favourite restaurants</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav>
-      <div class="logo-div">
-        <img src="./public/burger.png" class="logo" alt="logo" />
-        <h2 class="navbar-title">FoodPoint</h2>
-      </div>
-      <div>
-        <img src="./public/icons8-location-24.png" alt="" />
-        <input
-          class="navbar-text"
-          placeholder="Please allow your Location "
-          type="text"
-        />
-      </div>
-      <div>
-        <button class="navbar-btn">Sign in</button>
-      </div>
-    </nav>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#">
+          <img src="./public/burger.png" class="brand-logo" alt="FoodPoint logo" />
+          <span class="brand-name">FoodPoint</span>
+        </a>
 
-    <div class="main-div">
-      <!--  Left Div-->
-      <div class="left-div">
-        <div>
-        <h2>Filters</h2>
-        </div>
-        <input type="text">
-        <h4>Ratings</h4>
-        <div  class="rating-radio">
-            <input type="radio">
-            <label for="">⭐ ⭐ ⭐ ⭐ ⭐</label>
-        </div>
-        <div  class="rating-radio">
-            <input type="radio">
-            <label for="">⭐ ⭐ ⭐ ⭐ </label>
-        </div>
-        <div  class="rating-radio">
-            <input type="radio">
-            <label for="">⭐ ⭐ ⭐ </label>
-        </div>
-        <div  class="rating-radio">
-            <input type="radio">
-            <label for="">⭐ ⭐ </label>
-        </div>
-        <div  class="rating-radio">
-            <input type="radio">
-            <label for="">⭐ </label>
+        <div class="location-input">
+          <img src="./public/icons8-location-24.png" class="pin-icon" alt="Location" />
+          <input type="text" placeholder="Please allow your location" />
         </div>
 
-      </div>
-      <!--right div-->
-      <div class="right-div">   
-        <div class="right-input">
-            <img src="public/icons8-location-24.png" alt="logo">
-            <input class="right-address" placeholder="Enter ur address" type="text">
-            <button>Find Feed</button>
+        <div class="header-right">
+          <button class="cart-btn" type="button">
+            <span class="cart-emoji">&#128722;</span>
+            <span class="cart-count">0</span>
+          </button>
+          <button class="signin-btn" type="button">Sign In</button>
         </div>
       </div>
-    </div>
+    </header>
+
+    <main class="main-section">
+      <div class="layout">
+        <aside class="filters">
+          <h2 class="filters-title">Filters</h2>
+
+          <div class="filter-block">
+            <input
+              class="filter-input"
+              type="text"
+              placeholder="Search any keyword"
+            />
+          </div>
+
+          <div class="filter-block">
+            <h3 class="filter-heading">Ratings</h3>
+            <label class="filter-row">
+              <input type="radio" name="rating" checked />
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </label>
+            <label class="filter-row">
+              <input type="radio" name="rating" />
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;</span>
+            </label>
+            <label class="filter-row">
+              <input type="radio" name="rating" />
+              <span class="stars">&#9733;&#9733;&#9733;</span>
+            </label>
+            <label class="filter-row">
+              <input type="radio" name="rating" />
+              <span class="stars">&#9733;&#9733;</span>
+            </label>
+            <label class="filter-row">
+              <input type="radio" name="rating" />
+              <span class="stars">&#9733;</span>
+            </label>
+          </div>
+
+          <div class="filter-block">
+            <h3 class="filter-heading">Sort By</h3>
+            <label class="filter-row">
+              <input type="radio" name="sort" checked />
+              <span class="filter-label">Top Rated</span>
+            </label>
+            <label class="filter-row">
+              <input type="radio" name="sort" />
+              <span class="filter-label">Latest</span>
+            </label>
+          </div>
+
+          <div class="filter-block">
+            <h3 class="filter-heading">Locations</h3>
+            <label class="filter-row">
+              <input type="radio" name="location" />
+              <span class="filter-label">Bronx</span>
+            </label>
+            <label class="filter-row">
+              <input type="radio" name="location" />
+              <span class="filter-label">Peru</span>
+            </label>
+            <label class="filter-row">
+              <input type="radio" name="location" />
+              <span class="filter-label">Mount Vernos</span>
+            </label>
+            <label class="filter-row">
+              <input type="radio" name="location" />
+              <span class="filter-label">San Francisco</span>
+            </label>
+            <label class="filter-row">
+              <input type="radio" name="location" />
+              <span class="filter-label">Turkey</span>
+            </label>
+            <label class="filter-row">
+              <input type="radio" name="location" />
+              <span class="filter-label">Italy</span>
+            </label>
+            <label class="filter-row">
+              <input type="radio" name="location" />
+              <span class="filter-label">Brooklyn</span>
+            </label>
+          </div>
+
+          <a class="view-more" href="#">View More</a>
+        </aside>
+
+        <section class="content">
+          <div class="address-bar">
+            <img
+              src="./public/icons8-location-24.png"
+              class="address-icon"
+              alt="Location"
+            />
+            <input type="text" placeholder="Enter Your Address" />
+            <button class="find-btn" type="button">
+              <span class="search-icon"></span>
+              Find Food
+            </button>
+          </div>
+
+          <div class="cards-grid">
+            <article class="card">
+              <div class="card-media">
+                <img
+                  src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=70"
+                  alt="Chinese dim sum served in bamboo baskets"
+                />
+              </div>
+              <div class="card-body">
+                <div class="card-top">
+                  <h3 class="card-title">Billy Kwong</h3>
+                  <span class="card-rating">
+                    <span class="star">&#9733;</span> 5
+                  </span>
+                </div>
+                <p class="card-category">
+                  <span class="cat-icon">&#127991;</span>
+                  Chinese &bull; Asian
+                </p>
+                <div class="card-delivery">
+                  <span><span class="meta-icon">&#128757;</span> Free delivery</span>
+                  <span class="dot">&bull;</span>
+                  <span><span class="meta-icon">&#9201;</span> 20&ndash;30 min</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media">
+                <img
+                  src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=600&q=70"
+                  alt="Garlic butter shrimp in a skillet"
+                />
+              </div>
+              <div class="card-body">
+                <div class="card-top">
+                  <h3 class="card-title">Bubba Gump Shrimp</h3>
+                  <span class="card-rating">
+                    <span class="star">&#9733;</span> 5
+                  </span>
+                </div>
+                <p class="card-category">
+                  <span class="cat-icon">&#127991;</span>
+                  Seafood &bull; American
+                </p>
+                <div class="card-delivery">
+                  <span><span class="meta-icon">&#128757;</span> $2 delivery</span>
+                  <span class="dot">&bull;</span>
+                  <span><span class="meta-icon">&#9201;</span> 25&ndash;35 min</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media">
+                <img
+                  src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=70"
+                  alt="Grilled steak sliced on a board"
+                />
+              </div>
+              <div class="card-body">
+                <div class="card-top">
+                  <h3 class="card-title">Peter Luger Steak House</h3>
+                  <span class="card-rating">
+                    <span class="star">&#9733;</span> 5
+                  </span>
+                </div>
+                <p class="card-category">
+                  <span class="cat-icon">&#127991;</span>
+                  Steakhouse &bull; American
+                </p>
+                <div class="card-delivery">
+                  <span><span class="meta-icon">&#128757;</span> $3 delivery</span>
+                  <span class="dot">&bull;</span>
+                  <span><span class="meta-icon">&#9201;</span> 30&ndash;40 min</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media">
+                <img
+                  src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=600&q=70"
+                  alt="Steak with herbs on a plate"
+                />
+              </div>
+              <div class="card-body">
+                <div class="card-top">
+                  <h3 class="card-title">Nusr-Et Steakhouse</h3>
+                  <span class="card-rating">
+                    <span class="star">&#9733;</span> 5
+                  </span>
+                </div>
+                <p class="card-category">
+                  <span class="cat-icon">&#127991;</span>
+                  Steakhouse &bull; Turkish
+                </p>
+                <div class="card-delivery">
+                  <span><span class="meta-icon">&#128757;</span> $4 delivery</span>
+                  <span class="dot">&bull;</span>
+                  <span><span class="meta-icon">&#9201;</span> 35&ndash;45 min</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media">
+                <img
+                  src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=600&q=70"
+                  alt="Turkish mezze spread with fresh bread"
+                />
+              </div>
+              <div class="card-body">
+                <div class="card-top">
+                  <h3 class="card-title">Mikla Restaurant</h3>
+                  <span class="card-rating">
+                    <span class="star">&#9733;</span> 5
+                  </span>
+                </div>
+                <p class="card-category">
+                  <span class="cat-icon">&#127991;</span>
+                  Turkish &bull; Fine Dining
+                </p>
+                <div class="card-delivery">
+                  <span><span class="meta-icon">&#128757;</span> $5 delivery</span>
+                  <span class="dot">&bull;</span>
+                  <span><span class="meta-icon">&#9201;</span> 40&ndash;50 min</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media">
+                <img
+                  src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=70"
+                  alt="Fresh tagliatelle pasta with tomato sauce"
+                />
+              </div>
+              <div class="card-body">
+                <div class="card-top">
+                  <h3 class="card-title">Trattoria da Enzo</h3>
+                  <span class="card-rating">
+                    <span class="star">&#9733;</span> 5
+                  </span>
+                </div>
+                <p class="card-category">
+                  <span class="cat-icon">&#127991;</span>
+                  Italian &bull; Pasta
+                </p>
+                <div class="card-delivery">
+                  <span><span class="meta-icon">&#128757;</span> Free delivery</span>
+                  <span class="dot">&bull;</span>
+                  <span><span class="meta-icon">&#9201;</span> 20&ndash;30 min</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media">
+                <img
+                  src="https://images.unsplash.com/photo-1533777324565-a040eb52facd?auto=format&fit=crop&w=600&q=70"
+                  alt="Italian pasta dish with parmesan"
+                />
+              </div>
+              <div class="card-body">
+                <div class="card-top">
+                  <h3 class="card-title">Osteria del Sole</h3>
+                  <span class="card-rating">
+                    <span class="star">&#9733;</span> 5
+                  </span>
+                </div>
+                <p class="card-category">
+                  <span class="cat-icon">&#127991;</span>
+                  Italian &bull; Wine Bar
+                </p>
+                <div class="card-delivery">
+                  <span><span class="meta-icon">&#128757;</span> $2 delivery</span>
+                  <span class="dot">&bull;</span>
+                  <span><span class="meta-icon">&#9201;</span> 25&ndash;35 min</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-media">
+                <img
+                  src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=70"
+                  alt="European bistro plate with fresh garnish"
+                />
+              </div>
+              <div class="card-body">
+                <div class="card-top">
+                  <h3 class="card-title">Bistro Europa</h3>
+                  <span class="card-rating">
+                    <span class="star">&#9733;</span> 5
+                  </span>
+                </div>
+                <p class="card-category">
+                  <span class="cat-icon">&#127991;</span>
+                  European &bull; Bistro
+                </p>
+                <div class="card-delivery">
+                  <span><span class="meta-icon">&#128757;</span> Free delivery</span>
+                  <span class="dot">&bull;</span>
+                  <span><span class="meta-icon">&#9201;</span> 30&ndash;40 min</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="brand footer-brand" href="#">
+          <img src="./public/burger.png" class="brand-logo" alt="FoodPoint logo" />
+          <span class="brand-name">FoodPoint</span>
+        </a>
+
+        <div class="socials">
+          <a href="#">in</a>
+          <a href="#">&#9654;</a>
+          <a href="#">&#9678;</a>
+          <a href="#">f</a>
+        </div>
+
+        <p class="footer-desc">
+          FoodPoint - A one-stop destination for delicious meals, anytime,
+          anywhere!
+        </p>
+
+        <nav class="footer-links">
+          <a href="#">Home</a>
+          <a href="#">Login</a>
+          <a href="#">Restaurants</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Contact</a>
+        </nav>
+
+        <div class="footer-bottom">
+          <span class="copyright">Copyright 2024. All rights reserved.</span>
+
+          <div class="footer-bottom-right">
+            <button class="lang-select" type="button">
+              <span class="lang-globe"></span>
+              English
+              <span class="caret-text">&#9662;</span>
+            </button>
+
+            <span class="made-by">
+              Made with <span class="heart">&hearts;</span> by FoodPoint
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
